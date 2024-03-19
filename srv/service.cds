@@ -1,7 +1,13 @@
 using { BrainBoost as my } from '../db/schema';
 
-@path: '/service/BrainBoostSvcs'
-@requires: 'authenticated-user'
-service BrainBoostService {
-
+@path : '/service/BrainBoostSvcs'
+service BrainBoostService
+{
+    entity Lehrer as
+        projection on my.Lehrer;
 }
+
+annotate BrainBoostService with @requires :
+[
+    'authenticated-user'
+];
