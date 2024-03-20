@@ -19,3 +19,15 @@ entity Lehrer
     Name : String(100);
     Anrede : String(100);
 }
+
+entity Stufe
+{
+    key ID : UUID;
+    Name : String;
+}
+
+entity Art
+{
+    key ID : UUID;
+    Name : String;
+}
