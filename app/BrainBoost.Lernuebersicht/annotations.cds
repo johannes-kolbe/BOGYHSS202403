@@ -40,6 +40,12 @@ annotate service.Lernstoff with @(
         {
             $Type : 'UI.DataField',
             Value : autor_ID,
-            Label : 'autor_ID',
+            Label : 'Autor',
         },]
 );
+annotate service.Lernstoff with {
+    autor @Common.Text : {
+            $value : autor.Nutzername,
+            ![@UI.TextArrangement] : #TextOnly,
+        }
+};
