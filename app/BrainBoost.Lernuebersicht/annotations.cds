@@ -7,8 +7,22 @@ annotate service.Fach with @(
             Label : 'Name',
             Value : Name,
         },
+        {
+            $Type : 'UI.DataFieldForIntentBasedNavigation',
+            SemanticObject : 'BrainBoostLernuebersicht',
+            Action : 'display',
+            Label : 'Show Fächer',
+            Mapping : [
+                {
+                    $Type : 'Common.SemanticObjectMappingType',
+                    LocalProperty : ID,
+                    SemanticObjectProperty : 'fach.ID',
+                },
+            ],
+        },
     ]
 );
+
 annotate service.Fach with @(
     UI.FieldGroup #GeneratedGroup1 : {
         $Type : 'UI.FieldGroupType',
@@ -102,10 +116,10 @@ annotate service.Lernstoff with @(
         fach.ID,]
 );
 annotate service.Fach with {
-    Name @Common.Label : 'fach/Name'
+    Name @Common.Label : 'Name'
 };
 annotate service.Fach with {
-    ID @Common.Label : 'fach/ID'
+    ID @Common.Label : 'Fach'
 };
 annotate service.Fach with {
     ID @Common.Text : {

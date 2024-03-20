@@ -31,6 +31,8 @@
           "semanticObject": "BrainBoostLernuebersicht",
           "action": "display",
           "title": "{{flpTitle}}",
+          "subTitle": "Display Lernübersicht",
+          "icon": "sap-icon://flight",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"
