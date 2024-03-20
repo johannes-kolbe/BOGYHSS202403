@@ -1,0 +1,155 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "ovp",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:ovp",
+      "version": "1.13.0",
+      "toolsId": "3d04c829-abe9-48c2-a947-a34aeef0e1f2"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/service/BrainBoostSvcs/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.121.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.fe.templates": {},
+        "sap.ovp": {},
+        "sap.ui.rta": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ovp.i18n.i18n"
+        }
+      },
+      "mainModel": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [],
+      "targets": {}
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.ovp.app.Main": {
+            "controllerName": "ovp.ext.controller.OverViewPageExt"
+          }
+        }
+      }
+    }
+  },
+  "sap.ovp": {
+    "globalFilterModel": "mainModel",
+    "globalFilterEntityType": "Lehrer",
+    "containerLayout": "resizable",
+    "enableLiveFilter": true,
+    "considerAnalyticalParameters": false,
+    "cards": {
+      "fach": {
+        "template": "sap.ovp.cards.v4.list",
+        "model": "mainModel",
+        "settings": {
+          "title": "Lehrer Übersicht",
+          "subTitle": "nach Name",
+          "entitySet": "Lehrer",
+          "listType": "condensed",
+          "sortOrder": "descending",
+          "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+          "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+          "enableAddToInsights": true,
+          "defaultSpan": {
+            "cols": 2,
+            "rows": 8
+          }
+        }
+      },
+      "calender": {
+        "model": "mainModel",
+        "template": "sap.ovp.cards.v4.list",
+        "settings": {
+          "title": "Kalender",
+          "subTitle": "Ansicht",
+          "entitySet": "Fach",
+          "defaultSpan": {
+            "cols": 1,
+            "rows": 8
+          }
+        }
+      }
+    },
+    "globalFilterControlType": "MacroFilterBar",
+    "chartSettings": {
+      "showDataLabel": true
+    },
+    "bHeaderExpanded": true
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "analytical"
+  }
+}
+
+
+
