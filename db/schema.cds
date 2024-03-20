@@ -24,7 +24,8 @@ entity Fach
 {
     key ID : UUID;
     Name : String;
-    thema : Association to one Thema;
+    thema : Association to many Thema on thema.fach = $self;
+    
 }
 
 entity Stufe
@@ -53,7 +54,7 @@ entity Thema
 {
     key ID : UUID;
     Name : String;
-    fach : Association to many Fach on fach.thema = $self;
+    fach : Association to one Fach;
 }
 
 entity Niveau
