@@ -46,6 +46,7 @@ entity Lernstoff
     Visible : Boolean;
     likes : Association to one Likes;
     autor : Association to one Nutzer on autor.lernstoff = $self;
+    gespeichert : Association to one Gespeichert;
 }
 
 entity Thema
@@ -72,6 +73,7 @@ entity Nutzer
     Gespeichert : String(100);
     lernstoff : Association to one Lernstoff;
     likes : Association to one Likes;
+    gespeichert : Association to one Gespeichert;
 }
 
 entity Entity1
@@ -85,4 +87,11 @@ entity Likes
     Bewertung : Integer;
     lernstoff : Association to one Lernstoff on lernstoff.likes = $self;
     nutzer : Association to one Nutzer on nutzer.likes = $self;
+}
+
+entity Gespeichert
+{
+    key ID : UUID;
+    lernstoff : Association to one Lernstoff on lernstoff.gespeichert = $self;
+    nutzer : Association to one Nutzer on nutzer.gespeichert = $self;
 }
