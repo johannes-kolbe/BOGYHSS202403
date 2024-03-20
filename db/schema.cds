@@ -18,6 +18,7 @@ entity Lehrer
     key ID : UUID;
     Name : String;
     Anrede : String;
+    lernstoff : Association to one Lernstoff;
 }
 
 entity Fach
@@ -25,18 +26,21 @@ entity Fach
     key ID : UUID;
     Name : String;
     thema : Association to many Thema on thema.fach = $self;
+    lernstoff : Association to one Lernstoff;
 }
 
 entity Stufe
 {
     key ID : UUID;
     Name : String;
+    lernstoff : Association to one Lernstoff;
 }
 
 entity Art
 {
     key ID : UUID;
     Name : String;
+    lernstoff : Association to one Lernstoff;
 }
 
 entity Lernstoff
@@ -49,6 +53,11 @@ entity Lernstoff
     gespeichert : Association to many Gespeichert on gespeichert.lernstoff = $self;
     Data : String;
     niveau : Association to one Niveau;
+    fach : Association to one Fach on fach.lernstoff = $self;
+    art : Association to one Art on art.lernstoff = $self;
+    lehrer : Association to one Lehrer on lehrer.lernstoff = $self;
+    stufe : Association to one Stufe on stufe.lernstoff = $self;
+    thema : Association to one Thema on thema.lernstoff = $self;
 }
 
 entity Thema
@@ -56,6 +65,7 @@ entity Thema
     key ID : UUID;
     Name : String;
     fach : Association to one Fach;
+    lernstoff : Association to one Lernstoff;
 }
 
 entity Niveau
