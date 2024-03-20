@@ -46,7 +46,7 @@ entity Lernstoff
     Datum : DateTime;
     Visible : Boolean;
     likes : Association to many Likes;
-    autor : Association to one Nutzer on autor.lernstoff = $self;
+    autor : Association to one Nutzer;
     gespeichert : Association to one Gespeichert;
 }
 
@@ -72,7 +72,7 @@ entity Nutzer
     Stufe : String(100);
     Gmail : String(100);
     Gespeichert : String(100);
-    lernstoff : Association to many Lernstoff;
+    lernstoff : Association to many Lernstoff on lernstoff.autor = $self;
     likes : Association to many Likes;
     gespeichert : Association to many Gespeichert;
 }
