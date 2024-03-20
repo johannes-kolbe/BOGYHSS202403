@@ -46,8 +46,8 @@ entity Art
 entity Lernstoff
 {
     key ID : UUID;
-    Datum : DateTime;
-    Visible : Boolean;
+    Datum : DateTime not null;
+    Visible : Boolean not null;
     likes : Association to many Likes on likes.lernstoff = $self;
     autor : Association to one Nutzer;
     gespeichert : Association to many Gespeichert on gespeichert.lernstoff = $self;
@@ -58,7 +58,8 @@ entity Lernstoff
     lehrer : Association to one Lehrer;
     stufe : Association to one Stufe;
     thema : Association to one Thema;
-    
+    Titel : String not null;
+    Beschreibung : String;
 }
 
 entity Thema
