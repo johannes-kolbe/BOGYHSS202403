@@ -43,3 +43,19 @@ entity Niveau
     key ID : UUID;
     Name : String not null;
 }
+
+entity Nutzer
+{
+    key ID : UUID;
+    Vorname : String(100);
+    Nutzername : String(100);
+    Beitrittsdatum : DateTime;
+    Stufe : String(100);
+    Gmail : String(100);
+    Gespeichert : String(100);
+}
+
+entity Entity1
+{
+    key ID : UUID;
+}
