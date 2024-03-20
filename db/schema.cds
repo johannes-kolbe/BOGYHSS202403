@@ -25,7 +25,6 @@ entity Fach
     key ID : UUID;
     Name : String;
     thema : Association to many Thema on thema.fach = $self;
-    
 }
 
 entity Stufe
@@ -48,6 +47,7 @@ entity Lernstoff
     likes : Association to many Likes on likes.lernstoff = $self;
     autor : Association to one Nutzer;
     gespeichert : Association to many Gespeichert on gespeichert.lernstoff = $self;
+    Data : String;
 }
 
 entity Thema
