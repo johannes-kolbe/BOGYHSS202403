@@ -17,13 +17,13 @@ entity Lehrer
 {
     key ID : UUID;
     Name : String;
-    Anrede : String
+    Anrede : String;
 }
 
 entity Fach
 {
     key ID : UUID;
-    Name: String;
+    Name : String;
     thema : Association to one Thema;
 }
 
@@ -43,8 +43,9 @@ entity Lernstoff
 {
     key ID : UUID;
     Datum : DateTime;
-    Autor : String;
     Visible : Boolean;
+    likes : Association to one Likes;
+    autor : Association to one Nutzer on autor.lernstoff = $self;
 }
 
 entity Thema
@@ -69,9 +70,19 @@ entity Nutzer
     Stufe : String(100);
     Gmail : String(100);
     Gespeichert : String(100);
+    lernstoff : Association to one Lernstoff;
+    likes : Association to one Likes;
 }
 
 entity Entity1
 {
     key ID : UUID;
+}
+
+entity Likes
+{
+    key ID : UUID;
+    Bewertung : Integer;
+    lernstoff : Association to one Lernstoff on lernstoff.likes = $self;
+    nutzer : Association to one Nutzer on nutzer.likes = $self;
 }
