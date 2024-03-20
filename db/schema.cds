@@ -19,3 +19,9 @@ entity Lehrer
     Name : String(100);
     Anrede : String(100);
 }
+
+entity Fach
+{
+    key ID : UUID;
+    Thema : String;
+}
