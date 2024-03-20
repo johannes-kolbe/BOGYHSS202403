@@ -26,6 +26,18 @@ entity Fach
     Thema : String;
 }
 
+entity Stufe
+{
+    key ID : UUID;
+    Name : String;
+}
+
+entity Art
+{
+    key ID : UUID;
+    Name : String;
+}
+
 entity Niveau
 {
     key ID : UUID;
