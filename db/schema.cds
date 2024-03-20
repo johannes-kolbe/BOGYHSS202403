@@ -16,14 +16,15 @@ from '@sap/cds/common';
 entity Lehrer
 {
     key ID : UUID;
-    Name : String(100);
-    Anrede : String(100);
+    Name : String;
+    Anrede : String
 }
 
 entity Fach
 {
     key ID : UUID;
-    Thema : String;
+    Name: String;
+    thema : Association to one Thema;
 }
 
 entity Stufe
@@ -36,4 +37,19 @@ entity Art
 {
     key ID : UUID;
     Name : String;
+}
+
+entity Lernstoff
+{
+    key ID : UUID;
+    Datum : DateTime;
+    Autor : String;
+    Visible : Boolean;
+}
+
+entity Thema
+{
+    key ID : UUID;
+    Name : String;
+    fach : Association to many Fach on fach.thema = $self;
 }
