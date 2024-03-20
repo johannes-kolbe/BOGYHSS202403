@@ -33,7 +33,7 @@ entity Stufe
 {
     key ID : UUID;
     Name : String;
-    lernstoff: Association to one Lernstoff on lernstoff.stufe = $self;
+    lernstoff : Association to one Lernstoff on lernstoff.stufe = $self;
 }
 
 entity Art
@@ -67,7 +67,7 @@ entity Thema
     key ID : UUID;
     Name : String;
     fach : Association to one Fach;
-    lernstoff :  Association to one Lernstoff on lernstoff.thema = $self;
+    lernstoff : Association to one Lernstoff on lernstoff.thema = $self;
 }
 
 entity Niveau
