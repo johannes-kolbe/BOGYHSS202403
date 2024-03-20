@@ -45,9 +45,9 @@ entity Lernstoff
     key ID : UUID;
     Datum : DateTime;
     Visible : Boolean;
-    likes : Association to many Likes;
+    likes : Association to many Likes on likes.lernstoff = $self;
     autor : Association to one Nutzer;
-    gespeichert : Association to one Gespeichert;
+    gespeichert : Association to many Gespeichert on gespeichert.lernstoff = $self;
 }
 
 entity Thema
@@ -71,23 +71,22 @@ entity Nutzer
     Beitrittsdatum : DateTime;
     Stufe : String(100);
     Gmail : String(100);
-    Gespeichert : String(100);
     lernstoff : Association to many Lernstoff on lernstoff.autor = $self;
-    likes : Association to many Likes;
-    gespeichert : Association to many Gespeichert;
+    likes : Association to one Likes on likes.nutzer = $self;
+    gespeichert : Association to many Gespeichert on gespeichert.nutzer = $self;
 }
 
 entity Likes
 {
     key ID : UUID;
     Bewertung : Integer;
-    lernstoff : Association to one Lernstoff on lernstoff.likes = $self;
-    nutzer : Association to one Nutzer on nutzer.likes = $self;
+    lernstoff : Association to one Lernstoff;
+    nutzer : Association to one Nutzer;
 }
 
 entity Gespeichert
 {
     key ID : UUID;
-    lernstoff : Association to one Lernstoff on lernstoff.gespeichert = $self;
-    nutzer : Association to one Nutzer on nutzer.gespeichert = $self;
+    lernstoff : Association to one Lernstoff;
+    nutzer : Association to one Nutzer;
 }
