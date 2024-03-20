@@ -21,14 +21,15 @@
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/dev-cap-tools": "^1.31.0",
-    "@sap/ux-specification": "^1.108.25"
+    "@sap/ux-specification": "^1.120.6"
   },
   "scripts": {
     "start": "cds-serve",
     "start-local": "npm run generate-entry-point && npm run cds-watch",
     "generate-entry-point": "dev-cap-tools gen-entrypoint",
     "cds-watch": "cds watch --open",
-    "watch-BrainBoost.Lernuebersicht": "cds watch --open BrainBoost.Lernuebersicht/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-BrainBoost.Lernuebersicht": "cds watch --open BrainBoost.Lernuebersicht/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-ovp": "cds watch --open ovp/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -53,6 +54,7 @@
   },
   "lcap": true,
   "sapux": [
-    "app/BrainBoost.Lernuebersicht"
+    "app/BrainBoost.Lernuebersicht",
+    "app/ovp"
   ]
 }
