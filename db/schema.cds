@@ -37,3 +37,16 @@ entity Art
     key ID : UUID;
     Name : String;
 }
+
+entity Entity1
+{
+    key ID : UUID;
+}
+
+entity Nutzer
+{
+    key ID : UUID;
+    Vorname : String;
+    Beitrittsdatum : DateTime;
+    Gmail : String(100);
+}
