@@ -76,11 +76,6 @@ entity Nutzer
     gespeichert : Association to many Gespeichert;
 }
 
-entity Entity1
-{
-    key ID : UUID;
-}
-
 entity Likes
 {
     key ID : UUID;
