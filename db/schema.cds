@@ -26,7 +26,7 @@ entity Fach
     key ID : UUID;
     Name : String;
     thema : Association to many Thema on thema.fach = $self;
-    lernstoff : Association to one Lernstoff;
+    lernstoff : Association to many Lernstoff
 }
 
 entity Stufe
