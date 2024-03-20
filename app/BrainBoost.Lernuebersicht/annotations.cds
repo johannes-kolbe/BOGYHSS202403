@@ -27,5 +27,19 @@ annotate service.Fach with @(
             Label : 'General Information',
             Target : '@UI.FieldGroup#GeneratedGroup1',
         },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Lernuebersicht',
+            ID : 'Lernuebersicht',
+            Target : 'lernstoff/@UI.LineItem#Lernuebersicht',
+        },
     ]
+);
+annotate service.Lernstoff with @(
+    UI.LineItem #Lernuebersicht : [
+        {
+            $Type : 'UI.DataField',
+            Value : autor_ID,
+            Label : 'autor_ID',
+        },]
 );
