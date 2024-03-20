@@ -48,6 +48,7 @@ entity Lernstoff
     autor : Association to one Nutzer;
     gespeichert : Association to many Gespeichert on gespeichert.lernstoff = $self;
     Data : String;
+    niveau : Association to one Niveau;
 }
 
 entity Thema
