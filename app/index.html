@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title> Project Preview </title>
+    <script src="shared-config.js"></script>
+    <script src="https://ui5.sap.com/1.108.7/resources/sap-ui-core.js" 
+            id="sap-ui-bootstrap"
+            data-sap-ui-theme="sap_horizon"
+            data-sap-ui-bindingSyntax="complex" 
+            data-sap-ui-xx-bindingSyntax="complex"
+            data-sap-ui-resourceroots='{"assets": "assets"}' 
+            data-sap-ui-libs="sap.m,sap.uxap,sap.ui.layout,sap.f">
+    </script>
+    <link rel="stylesheet" href="assets/preview.css">
+</head>
+
+<body id="body" class="sapUiBody">
+    <script>
+        "use strict";
+        sap.ui.localResources("assets");
+        (function (jQuery, App, Page) {
+            sap.ui.getCore().attachInit(function () {
+                sap.ui.define([
+                    "sap/ui/core/mvc/Controller",
+                    "sap/ui/model/json/JSONModel"
+                ], function (Controller, JSONModel) {
+                    return Controller.extend("PreviewController", {
+                        onInit: function () {
+
+                            const data = {"Services":[{"ServiceName":"BrainBoostService","DetailsURL":"./service/BrainBoostSvcs/","Metadata":"./service/BrainBoostSvcs/$metadata","Entities":[{"Name":"Lehrer","URL":"./service/BrainBoostSvcs/Lehrer","FioriURL":"$fiori-preview/BrainBoostService/Lehrer#preview-app"},{"Name":"Fach","URL":"./service/BrainBoostSvcs/Fach","FioriURL":"$fiori-preview/BrainBoostService/Fach#preview-app"},{"Name":"Art","URL":"./service/BrainBoostSvcs/Art","FioriURL":"$fiori-preview/BrainBoostService/Art#preview-app"},{"Name":"Lernstoff","URL":"./service/BrainBoostSvcs/Lernstoff","FioriURL":"$fiori-preview/BrainBoostService/Lernstoff#preview-app"},{"Name":"Likes","URL":"./service/BrainBoostSvcs/Likes","FioriURL":"$fiori-preview/BrainBoostService/Likes#preview-app"},{"Name":"Niveau","URL":"./service/BrainBoostSvcs/Niveau","FioriURL":"$fiori-preview/BrainBoostService/Niveau#preview-app"},{"Name":"Nutzer","URL":"./service/BrainBoostSvcs/Nutzer","FioriURL":"$fiori-preview/BrainBoostService/Nutzer#preview-app"},{"Name":"Stufe","URL":"./service/BrainBoostSvcs/Stufe","FioriURL":"$fiori-preview/BrainBoostService/Stufe#preview-app"},{"Name":"Thema","URL":"./service/BrainBoostSvcs/Thema","FioriURL":"$fiori-preview/BrainBoostService/Thema#preview-app"},{"Name":"Gespeichert","URL":"./service/BrainBoostSvcs/Gespeichert","FioriURL":"$fiori-preview/BrainBoostService/Gespeichert#preview-app"}],"EntitiesCount":10}]}
+                            this.getView().setModel(new JSONModel(data));
+                        }
+                    });
+                });
+                var oApp = new App()
+                var previewView = sap.ui.view({
+                    viewName: "assets.Preview",
+                    type: sap.ui.core.mvc.ViewType.XML
+                });
+                oApp.addPage(new Page({
+                    content: [previewView],
+                    showHeader: false
+                })).placeAt("content");
+            });
+
+        }(jQuery, sap.m.App, sap.m.Page));
+    </script>
+    <div id="content"></div>
+</body>
+
+</html>
