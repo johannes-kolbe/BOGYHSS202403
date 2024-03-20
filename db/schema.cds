@@ -69,7 +69,7 @@ entity Nutzer
     Vorname : String(100);
     Nutzername : String(100);
     Beitrittsdatum : DateTime;
-    Stufe : String(100);
+    Stufe : Association to one Stufe;
     Gmail : String(100);
     lernstoff : Association to many Lernstoff on lernstoff.autor = $self;
     likes : Association to one Likes on likes.nutzer = $self;
