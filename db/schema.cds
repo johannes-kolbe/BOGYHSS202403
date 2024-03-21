@@ -57,9 +57,9 @@ entity Lernstoff
     art : Association to one Art;
     lehrer : Association to one Lehrer;
     stufe : Association to one Stufe;
-    thema : Association to one Thema;
     Titel : String not null;
     Beschreibung : String;
+    thema : Association to one Thema;
 }
 
 entity Thema
@@ -67,7 +67,7 @@ entity Thema
     key ID : UUID;
     Name : String;
     fach : Association to one Fach;
-    lernstoff : Association to one Lernstoff on lernstoff.thema = $self;
+    lernstoff : Association to many Lernstoff on lernstoff.thema = $self;
 }
 
 entity Niveau
