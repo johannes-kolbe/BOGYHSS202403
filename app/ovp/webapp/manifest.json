@@ -100,16 +100,16 @@
     "cards": {
       "faecher": {
         "model": "mainModel",
-        "template": "sap.ovp.cards.v4.linklist",
+        "template": "sap.ovp.cards.v4.list",
         "settings": {
           "title": "Fächerübersicht",
           "subTitle": "Fachname",
           "entitySet": "Fach",
+          "imageSupported": true,
           "listType": "condensed",
           "sortOrder": "descending",
-          "headerAnnotationPath" : "com.sap.vocabularies.UI.v1.HeaderInfo#Card",
-          "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
-          "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+          "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#OVP",
+          "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#OVP",
           "defaultSpan": {
             "cols": 2,
             "rows": 5
@@ -125,8 +125,8 @@
           "entitySet": "Gespeichert",
           "listType": "condensed",
           "sortOrder": "descending",
-          "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
-          "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+          "annotationPath": "com.sap.vocabularies.UI.v1.LineItem#OVP",
+          "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#OVP",
           "defaultSpan": {
             "cols": 2,
             "rows": 5
@@ -134,7 +134,7 @@
         }
       }
     },
-    "globalFilterControlType": "MacroFilterBar"
+    "chartSettings": {}
   },
   "sap.fiori": {
     "registrationIds": [],
