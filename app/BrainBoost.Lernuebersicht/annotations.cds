@@ -162,5 +162,8 @@ annotate service.Lernstoff with @(
     }
 );
 annotate service.Lernstoff with {
-    thema @Common.Text : thema.Name
+    thema @Common.Text : {
+            $value : thema.Name,
+            ![@UI.TextArrangement] : #TextOnly,
+        }
 };
