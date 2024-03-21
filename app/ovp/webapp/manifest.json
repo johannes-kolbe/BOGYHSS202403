@@ -115,30 +115,29 @@
           }
         }
       },
-      "cards": {
-        "Gespeichertes": {
-          "model": "mainModel",
-          "template": "sap.ovp.cards.v4.list",
-          "settings": {
-            "title": "Gespeichertes",
-            "subTitle": "gespeicherte sachen",
-            "entitySet": "gespeicherte",
-            "listType": "condensed",
-            "sortOrder": "descending",
-            "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
-            "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
-            "defaultSpan": {
-              "cols": 2,
-              "rows": 5
-            }
+      "Gespeichertes": {
+        "model": "mainModel",
+        "template": "sap.ovp.cards.v4.list",
+        "settings": {
+          "title": "Gespeichertes",
+          "subTitle": "gespeicherte sachen",
+          "entitySet": "gespeicherte",
+          "listType": "condensed",
+          "sortOrder": "descending",
+          "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
+          "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+          "defaultSpan": {
+            "cols": 2,
+            "rows": 5
           }
         }
       }
-    },
-    "globalFilterControlType": "MacroFilterBar"
+    }
   },
-  "sap.fiori": {
-    "registrationIds": [],
-    "archeType": "analytical"
-  }
+  "globalFilterControlType": "MacroFilterBar"
+},
+"sap.fiori": {
+  "registrationIds": [],
+  "archeType": "analytical"
+}
 }
