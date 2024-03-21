@@ -269,9 +269,10 @@ annotate service.Links with @(
             Label : 'Titel',
         },
         {
-            $Type : 'UI.DataField',
+            $Type : 'UI.DataFieldWithUrl',
             Value : lernstoff.links.URL,
             Label : 'URL',
+            Url   : URL,
         },]
 );
 annotate service.Thema with @(
