@@ -206,10 +206,11 @@ annotate service.Lernstoff with @(
 );
 annotate service.Thema with @(
     UI.SelectionFields : [
-        fach.ID,]
+        fach.ID,
+        lernstoff.thema_ID,]
 );
 annotate service.Lernstoff with {
-    thema @Common.Label : 'lernstoff/thema_ID'
+    thema @Common.Label : 'Thema'
 };
 annotate service.Thema with @(
     UI.HeaderFacets : [
@@ -236,4 +237,13 @@ annotate service.Lernstoff with {
             $value : stufe.Name,
             ![@UI.TextArrangement] : #TextOnly,
         }
+};
+annotate service.Lernstoff with {
+    thema @Common.Text : {
+            $value : thema.Name,
+            ![@UI.TextArrangement] : #TextOnly,
+        }
+};
+annotate service.Thema with {
+    Name @Common.Label : 'Name'
 };
