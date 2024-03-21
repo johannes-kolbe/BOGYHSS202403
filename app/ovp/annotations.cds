@@ -1,6 +1,13 @@
 using BrainBoostService as service from '../../srv/service';
 
 annotate service.Fach with @UI : { 
+    HeaderInfo #Card : {
+        $Type : 'UI.HeaderInfoType',
+        TypeName : 'Fach',
+        TypeNamePlural : 'Fächer',
+        ImageUrl : Icon
+        }
+    },
     LineItem : [
         {
             $Type : 'UI.DataField',
@@ -19,6 +26,15 @@ annotate service.Fach with @UI : {
                     SemanticObjectProperty : 'fach.ID',
                 },
             ],
+        },
+    ]
+
+annotate service.Gespeichert with @UI : { 
+    LineItem : [
+        {
+            $Type : 'UI.DataField',
+            Label : 'Titel',
+            Value : lernstoff.Titel,
         },
     ]
  };
