@@ -6,7 +6,6 @@ annotate service.Fach with @UI : {
         TypeName : 'Fach',
         TypeNamePlural : 'Fächer',
         ImageUrl : Icon
-        }
     },
     LineItem : [
         {
