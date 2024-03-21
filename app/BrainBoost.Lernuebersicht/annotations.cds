@@ -86,9 +86,9 @@ annotate service.Lernstoff with @(
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
-            Label : 'Themen',
-            ID : 'Themen',
-            Target : '@UI.FieldGroup#Themen',
+            Label : 'Lernstoff',
+            ID : 'Lernstoff',
+            Target : '@UI.FieldGroup#Lernstoff1',
         },
     ],
     UI.FieldGroup #Lernstoff : {
@@ -170,3 +170,29 @@ annotate service.Lernstoff with @(
 annotate service.Lernstoff with {
     thema @Common.Text : thema.Name
 };
+annotate service.Lernstoff with @(
+    UI.FieldGroup #Lernstoff1 : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : Titel,
+                Label : 'Titel',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Datum,
+                Label : 'Datum',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Beschreibung,
+                Label : 'Beschreibung',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : autor_ID,
+                Label : 'autor_ID',
+            },],
+    }
+);
