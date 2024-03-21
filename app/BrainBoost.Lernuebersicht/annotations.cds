@@ -147,7 +147,7 @@ annotate service.Lernstoff with @(
         {
             $Type : 'UI.DataField',
             Value : thema_ID,
-            Label : 'thema_ID',
+            Label : 'Thema',
         },]
 );
 annotate service.Lernstoff with @(
