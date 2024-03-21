@@ -1,6 +1,6 @@
-ID;Name
-10969f2e-1a56-4519-aef2-447c45e6732e;Mathe
-a9567537-9e1b-46e9-bdfd-a424d90c5712;Englisch
-eb59101e-435d-40ce-9628-19c98574b687;Informatik
-af41c767-2843-4f13-b49c-8257fd544bc6;Deutsch
-dd46917c-7af7-4f8a-b2be-ee636c2404b2;Physik
+ID;Name;Icon
+10969f2e-1a56-4519-aef2-447c45e6732e;Mathe;sap-icon://numbered-text
+a9567537-9e1b-46e9-bdfd-a424d90c5712;Englisch;sap-icon://copy
+eb59101e-435d-40ce-9628-19c98574b687;Informatik;sap-icon://database
+af41c767-2843-4f13-b49c-8257fd544bc6;Deutsch;sap-icon://alphabetical-order
+dd46917c-7af7-4f8a-b2be-ee636c2404b2;Physik;sap-icon://developer-settings

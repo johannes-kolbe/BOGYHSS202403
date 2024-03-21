@@ -27,6 +27,8 @@ entity Fach
     Name : String;
     thema : Association to many Thema on thema.fach = $self;
     lernstoff : Association to many Lernstoff on lernstoff.fach = $self;
+    Icon : String;
+    
 }
 
 entity Stufe
