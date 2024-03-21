@@ -170,3 +170,37 @@ annotate service.Lernstoff with @(
             },],
     }
 );
+annotate service.Thema with @(
+    UI.LineItem : [
+        {
+            $Type : 'UI.DataField',
+            Value : lernstoff.thema_ID,
+            Label : 'thema_ID',
+        },
+    ]
+);
+annotate service.Thema with @(
+    UI.Facets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Lernstoff',
+            ID : 'Lernstoff',
+            Target : 'lernstoff/@UI.LineItem#Lernstoff',
+        },
+    ]
+);
+annotate service.Lernstoff with @(
+    UI.LineItem #Lernstoff : [
+        {
+            $Type : 'UI.DataField',
+            Value : Titel,
+            Label : 'Titel',
+        },]
+);
+annotate service.Thema with @(
+    UI.SelectionFields : [
+        fach.ID,]
+);
+annotate service.Lernstoff with {
+    thema @Common.Label : 'lernstoff/thema_ID'
+};

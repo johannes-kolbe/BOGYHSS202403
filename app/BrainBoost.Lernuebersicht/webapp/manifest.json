@@ -102,53 +102,80 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "LernstoffList",
+          "name": "ThemaList",
           "target": [
-            "LernstoffList"
+            "ThemaList"
           ]
         },
         {
-          "pattern": "Lernstoff({key}):?query:",
-          "name": "LernstoffObjectPage",
+          "pattern": "Thema({key}):?query:",
+          "name": "ThemaObjectPage",
           "target": [
-            "LernstoffList",
-            "LernstoffObjectPage"
+            "ThemaList",
+            "ThemaObjectPage"
+          ]
+        },
+        {
+          "pattern": "Thema({key})/lernstoff({key2}):?query:",
+          "name": "Thema_lernstoffObjectPage",
+          "target": [
+            "ThemaList",
+            "ThemaObjectPage",
+            "Thema_lernstoffObjectPage"
           ]
         }
       ],
       "targets": {
-        "LernstoffList": {
+        "ThemaList": {
           "type": "Component",
-          "id": "LernstoffList",
+          "id": "ThemaList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/Lernstoff",
+              "contextPath": "/Thema",
               "navigation": {
-                "Lernstoff": {
+                "Thema": {
                   "detail": {
-                    "route": "LernstoffObjectPage"
+                    "route": "ThemaObjectPage"
                   }
                 }
-              },
-              "initialLoad": "Enabled"
+              }
             }
           },
           "controlAggregation": "beginColumnPages",
           "contextPattern": ""
         },
-        "LernstoffObjectPage": {
+        "ThemaObjectPage": {
           "type": "Component",
-          "id": "LernstoffObjectPage",
+          "id": "ThemaObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
-              "contextPath": "/Lernstoff",
-              "navigation": {}
+              "contextPath": "/Thema",
+              "navigation": {
+                "lernstoff": {
+                  "detail": {
+                    "route": "Thema_lernstoffObjectPage"
+                  }
+                }
+              }
             }
           },
           "controlAggregation": "midColumnPages",
-          "contextPattern": "/Lernstoff({key})"
+          "contextPattern": "/Thema({key})"
+        },
+        "Thema_lernstoffObjectPage": {
+          "type": "Component",
+          "id": "Thema_lernstoffObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "contextPath": "/Thema/lernstoff",
+              "navigation": {}
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/Thema({key})/lernstoff({key2})"
         }
       },
       "config": {
