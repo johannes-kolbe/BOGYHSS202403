@@ -1,16 +1,24 @@
 using BrainBoostService as service from '../../srv/service';
 
 annotate service.Fach with @UI : { 
-    Identification #OVP : [
+    LineItem : [
         {
             $Type : 'UI.DataField',
+            Label : 'Name',
             Value : Name,
         },
-    ],
-    LineItem #OVP : [
         {
-            $Type : 'UI.DataField',
-            Value : Name,
+            $Type : 'UI.DataFieldForIntentBasedNavigation',
+            SemanticObject : 'BrainBoostLernuebersicht',
+            Action : 'display',
+            Label : 'Show Fächer',
+            Mapping : [
+                {
+                    $Type : 'Common.SemanticObjectMappingType',
+                    LocalProperty : ID,
+                    SemanticObjectProperty : 'fach.ID',
+                },
+            ],
         },
-    ],
+    ]
  };
