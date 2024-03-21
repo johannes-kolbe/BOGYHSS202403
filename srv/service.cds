@@ -41,6 +41,10 @@ service BrainBoostService
     @odata.draft.enabled
     entity Gespeichert as
         projection on my.Gespeichert;
+
+    @odata.draft.enabled
+    entity Links as
+        projection on my.Links;
 }
 
 annotate BrainBoostService with @requires :
