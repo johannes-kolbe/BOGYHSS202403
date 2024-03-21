@@ -100,13 +100,14 @@
     "cards": {
       "faecher": {
         "model": "mainModel",
-        "template": "sap.ovp.cards.v4.list",
+        "template": "sap.ovp.cards.v4.linklist",
         "settings": {
           "title": "Fächerübersicht",
           "subTitle": "Fachname",
           "entitySet": "Fach",
           "listType": "condensed",
           "sortOrder": "descending",
+          "headerAnnotationPath" : "com.sap.vocabularies.UI.v1.HeaderInfo#Card",
           "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",
           "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
           "defaultSpan": {
@@ -121,7 +122,7 @@
         "settings": {
           "title": "Gespeichertes",
           "subTitle": "gespeicherte sachen",
-          "entitySet": "gespeicherte",
+          "entitySet": "Gespeichert",
           "listType": "condensed",
           "sortOrder": "descending",
           "annotationPath": "com.sap.vocabularies.UI.v1.LineItem",

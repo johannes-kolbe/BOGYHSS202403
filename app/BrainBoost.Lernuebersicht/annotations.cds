@@ -67,6 +67,12 @@ annotate service.Lernstoff with @(
             ID : 'Lernstoff',
             Target : '@UI.FieldGroup#Lernstoff1',
         },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Links',
+            ID : 'links2',
+            Target : 'links/@UI.LineItem#links1',
+        },
     ],
     UI.FieldGroup #Lernstoff : {
         $Type : 'UI.FieldGroupType',
@@ -247,3 +253,20 @@ annotate service.Lernstoff with {
 annotate service.Thema with {
     Name @Common.Label : 'Name'
 };
+annotate BrainBoost.Links with @(
+    UI.LineItem #links : [
+    ]
+);
+annotate service.Links with @(
+    UI.LineItem #links1 : [
+        {
+            $Type : 'UI.DataField',
+            Value : lernstoff.links.Titel,
+            Label : 'Titel',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : lernstoff.links.URL,
+            Label : 'URL',
+        },]
+);
