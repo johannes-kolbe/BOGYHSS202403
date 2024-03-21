@@ -130,7 +130,8 @@
                     "route": "LernstoffObjectPage"
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
           },
           "controlAggregation": "beginColumnPages",
