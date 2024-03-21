@@ -69,7 +69,7 @@ annotate service.Lernstoff with @(
         },
         {
             $Type : 'UI.ReferenceFacet',
-            Label : 'links',
+            Label : 'Links',
             ID : 'links2',
             Target : 'links/@UI.LineItem#links1',
         },
