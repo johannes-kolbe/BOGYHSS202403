@@ -224,16 +224,15 @@ annotate service.Thema with @(
             $Type : 'UI.ReferenceFacet',
             Label : 'Thema',
             ID : 'Thema',
-            Target : '@UI.FieldGroup#Thema',
-        },
-    ],
+            Target : '@UI.FieldGroup#Thema1',
+        },],
     UI.FieldGroup #Thema : {
         $Type : 'UI.FieldGroupType',
         Data : [
             {
                 $Type : 'UI.DataField',
                 Value : lernstoff.thema_ID,
-                Label : ' ',
+                Label : 'Thema',
                 ![@UI.Hidden],
             },],
     }
@@ -269,4 +268,14 @@ annotate service.Links with @(
             Value : lernstoff.links.URL,
             Label : 'URL',
         },]
+);
+annotate service.Thema with @(
+    UI.FieldGroup #Thema1 : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : lernstoff.thema_ID,
+            },],
+    }
 );
