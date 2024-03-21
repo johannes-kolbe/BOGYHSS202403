@@ -26,5 +26,18 @@ annotate service.Fach with @UI : {
                 },
             ],
         },
+        {
+            $Type : 'UI.DataFieldForIntentBasedNavigation',
+            SemanticObject : 'BrainBoostGespeicherteLernzett',
+            Action : 'display',
+            Label : 'Show Lernstoff',
+            Mapping : [
+                {
+                    $Type : 'Common.SemanticObjectMappingType',
+                    LocalProperty : ID,
+                    SemanticObjectProperty : 'lernstoff.ID',
+                },
+            ],
+        },
     ]
 };
