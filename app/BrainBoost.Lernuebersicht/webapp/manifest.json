@@ -139,7 +139,8 @@
                     "route": "ThemaObjectPage"
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
           },
           "controlAggregation": "beginColumnPages",

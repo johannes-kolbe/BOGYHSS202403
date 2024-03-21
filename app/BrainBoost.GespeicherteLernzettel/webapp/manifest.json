@@ -122,7 +122,8 @@
                     "route": "GespeichertObjectPage"
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
           }
         },
