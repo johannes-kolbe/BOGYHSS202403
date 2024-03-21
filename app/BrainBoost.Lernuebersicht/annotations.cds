@@ -146,15 +146,9 @@ annotate service.Lernstoff with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Value : Titel,
-            Label : 'Titel',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : Beschreibung,
-            Label : 'Beschreibung',
-        },
-    ]
+            Value : thema_ID,
+            Label : 'thema_ID',
+        },]
 );
 annotate service.Lernstoff with @(
     UI.FieldGroup #Themen : {
