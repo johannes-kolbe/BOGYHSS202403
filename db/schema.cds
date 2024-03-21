@@ -28,7 +28,6 @@ entity Fach
     thema : Association to many Thema on thema.fach = $self;
     lernstoff : Association to many Lernstoff on lernstoff.fach = $self;
     Icon : String;
-    
 }
 
 entity Stufe
@@ -62,6 +61,7 @@ entity Lernstoff
     Titel : String not null;
     Beschreibung : String;
     thema : Association to one Thema;
+    links : Association to many Links on links.lernstoff = $self;
 }
 
 entity Thema
@@ -104,4 +104,12 @@ entity Gespeichert
     key ID : UUID;
     lernstoff : Association to one Lernstoff;
     nutzer : Association to one Nutzer;
+}
+
+entity Links
+{
+    key ID : UUID;
+    URL : String;
+    Titel : String;
+    lernstoff : Association to one Lernstoff;
 }
