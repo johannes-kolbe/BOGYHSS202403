@@ -167,6 +167,11 @@ annotate service.Lernstoff with @(
                 $Type : 'UI.DataField',
                 Value : autor_ID,
                 Label : 'Autor',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : lehrer_ID,
+                Label : 'Lehrer',
             },],
     }
 );
@@ -279,3 +284,9 @@ annotate service.Thema with @(
             },],
     }
 );
+annotate service.Lernstoff with {
+    lehrer @Common.Text : {
+            $value : lehrer.Name,
+            ![@UI.TextArrangement] : #TextOnly,
+        }
+};

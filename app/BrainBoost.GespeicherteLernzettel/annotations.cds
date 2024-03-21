@@ -190,6 +190,11 @@ annotate service.Gespeichert with @(
                 $Type : 'UI.DataField',
                 Value : lernstoff.autor_ID,
                 Label : 'Autor',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : lernstoff.lehrer_ID,
+                Label : 'Lehrer',
             },],
     }
 );
