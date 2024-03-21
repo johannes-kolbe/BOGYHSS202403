@@ -138,12 +138,6 @@ annotate service.Lernstoff with @(
             },],
     }
 );
-annotate service.Lernstoff with {
-    thema @Common.Text : {
-            $value : thema.Name,
-            ![@UI.TextArrangement] : #TextOnly,
-        }
-};
 annotate service.Lernstoff with @(
     UI.FieldGroup #Lernstoff1 : {
         $Type : 'UI.FieldGroupType',
@@ -175,7 +169,7 @@ annotate service.Thema with @(
         {
             $Type : 'UI.DataField',
             Value : lernstoff.thema_ID,
-            Label : 'thema_ID',
+            Label : 'Thema',
         },
     ]
 );
@@ -195,6 +189,19 @@ annotate service.Lernstoff with @(
             $Type : 'UI.DataField',
             Value : Titel,
             Label : 'Titel',
+            ![@UI.Importance] : #High,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Beschreibung,
+            Label : 'Beschreibung',
+            ![@UI.Importance] : #Low,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : stufe_ID,
+            Label : 'Stufe',
+            ![@UI.Importance] : #Medium,
         },]
 );
 annotate service.Thema with @(
@@ -203,4 +210,30 @@ annotate service.Thema with @(
 );
 annotate service.Lernstoff with {
     thema @Common.Label : 'lernstoff/thema_ID'
+};
+annotate service.Thema with @(
+    UI.HeaderFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Thema',
+            ID : 'Thema',
+            Target : '@UI.FieldGroup#Thema',
+        },
+    ],
+    UI.FieldGroup #Thema : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : lernstoff.thema_ID,
+                Label : ' ',
+                ![@UI.Hidden],
+            },],
+    }
+);
+annotate service.Lernstoff with {
+    stufe @Common.Text : {
+            $value : stufe.Name,
+            ![@UI.TextArrangement] : #TextOnly,
+        }
 };
