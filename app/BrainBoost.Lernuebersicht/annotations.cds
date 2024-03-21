@@ -135,5 +135,10 @@ annotate service.Lernstoff with @(
             Value : Titel,
             Label : 'Titel',
         },
+        {
+            $Type : 'UI.DataField',
+            Value : Beschreibung,
+            Label : 'Beschreibung',
+        },
     ]
 );
