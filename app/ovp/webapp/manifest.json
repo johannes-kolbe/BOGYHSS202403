@@ -132,12 +132,11 @@
           }
         }
       }
-    }
+    },
+    "globalFilterControlType": "MacroFilterBar"
   },
-  "globalFilterControlType": "MacroFilterBar"
-},
-"sap.fiori": {
-  "registrationIds": [],
-  "archeType": "analytical"
-}
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "analytical"
+  }
 }
