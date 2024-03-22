@@ -141,7 +141,15 @@
                 }
               },
               "initialLoad": "Enabled",
-              "variantManagement": "None"
+              "variantManagement": "None",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "selectionMode": "None",
+                    "selectAll": false
+                  }
+                }
+              }
             }
           },
           "controlAggregation": "beginColumnPages",

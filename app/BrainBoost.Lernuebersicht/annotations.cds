@@ -314,3 +314,9 @@ annotate service.Lernstoff with @(
         TypeNamePlural : '',
     }
 );
+
+
+
+annotate service.Lernstoff with @Capabilities.Deletable: false;
+annotate service.Thema with @Capabilities.Deletable: false;
+annotate service.Gespeichert with @Capabilities.Deletable: false;
