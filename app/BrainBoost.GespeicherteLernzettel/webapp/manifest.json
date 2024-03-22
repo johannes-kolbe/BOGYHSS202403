@@ -123,7 +123,8 @@
                   }
                 }
               },
-              "initialLoad": "Enabled"
+              "initialLoad": "Enabled",
+              "variantManagement": "None"
             }
           }
         },

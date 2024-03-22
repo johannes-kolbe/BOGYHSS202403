@@ -140,7 +140,8 @@
                   }
                 }
               },
-              "initialLoad": "Enabled"
+              "initialLoad": "Enabled",
+              "variantManagement": "None"
             }
           },
           "controlAggregation": "beginColumnPages",
