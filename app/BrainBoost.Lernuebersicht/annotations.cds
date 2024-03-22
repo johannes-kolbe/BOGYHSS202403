@@ -291,3 +291,19 @@ annotate service.Lernstoff with {
             ![@UI.TextArrangement] : #TextOnly,
         }
 };
+
+annotate service.Lernstoff with @(
+    UI.HeaderFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Title',
+            ID : 'Title',
+            Target : '@UI.FieldGroup#Title',
+        },
+    ],
+    UI.FieldGroup #Title : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+        ],
+    }
+);
