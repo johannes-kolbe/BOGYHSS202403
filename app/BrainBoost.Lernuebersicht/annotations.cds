@@ -293,17 +293,24 @@ annotate service.Lernstoff with {
 };
 
 annotate service.Lernstoff with @(
-    UI.HeaderFacets : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            Label : 'Title',
-            ID : 'Title',
-            Target : '@UI.FieldGroup#Title',
-        },
-    ],
+    UI.HeaderFacets : [],
     UI.FieldGroup #Title : {
         $Type : 'UI.FieldGroupType',
         Data : [
-        ],
+            {
+                $Type : 'UI.DataField',
+                Value : Titel,
+                Label : 'Titel',
+            },],
+    }
+);
+annotate service.Lernstoff with @(
+    UI.HeaderInfo : {
+        Title : {
+            $Type : 'UI.DataField',
+            Value : Titel,
+        },
+        TypeName : '',
+        TypeNamePlural : '',
     }
 );
