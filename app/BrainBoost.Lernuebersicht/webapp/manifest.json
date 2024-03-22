@@ -172,7 +172,23 @@
           "options": {
             "settings": {
               "contextPath": "/Thema/lernstoff",
-              "navigation": {}
+              "navigation": {},
+              "content": {
+                "header": {
+                  "actions": {
+                    "upvote": {
+                      "press": "BrainBoost.Lernuebersicht.ext.controller.UpvoteScript.upvote",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "upvote",
+                      "position": {
+                        "placement": "Before",
+                        "anchor": "EditAction"
+                      }
+                    }
+                  }
+                }
+              }
             }
           },
           "controlAggregation": "endColumnPages",
